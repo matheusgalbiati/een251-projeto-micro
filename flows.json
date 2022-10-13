@@ -1,0 +1,322 @@
+[
+    {
+        "id": "79750fc40d53d665",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "99d4f36a0831c193",
+        "type": "AWS S3",
+        "z": "79750fc40d53d665",
+        "aws": "a77d22ca69e60a3b",
+        "operation": "ListBuckets",
+        "Bucket": "",
+        "Key": "",
+        "UploadId": "",
+        "CopySource": "",
+        "Id": "",
+        "Delete": "",
+        "AccelerateConfiguration": "",
+        "AnalyticsConfiguration": "",
+        "CORSConfiguration": "",
+        "ServerSideEncryptionConfiguration": "",
+        "IntelligentTieringConfiguration": "",
+        "InventoryConfiguration": "",
+        "BucketLoggingStatus": "",
+        "MetricsConfiguration": "",
+        "NotificationConfiguration": "",
+        "OwnershipControls": "",
+        "Policy": "",
+        "ReplicationConfiguration": "",
+        "RequestPaymentConfiguration": "",
+        "Tagging": "",
+        "VersioningConfiguration": "",
+        "WebsiteConfiguration": "",
+        "PublicAccessBlockConfiguration": "",
+        "Expression": "",
+        "ExpressionType": "",
+        "InputSerialization": "",
+        "OutputSerialization": "",
+        "PartNumber": "",
+        "name": "listar buckets",
+        "x": 390,
+        "y": 80,
+        "wires": [
+            [
+                "7f8963bf441a1bb7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3c9e745c9f4c8d68",
+        "type": "inject",
+        "z": "79750fc40d53d665",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 80,
+        "wires": [
+            [
+                "99d4f36a0831c193"
+            ]
+        ]
+    },
+    {
+        "id": "7f8963bf441a1bb7",
+        "type": "debug",
+        "z": "79750fc40d53d665",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "94386c6eb342f02b",
+        "type": "AWS S3",
+        "z": "79750fc40d53d665",
+        "aws": "a77d22ca69e60a3b",
+        "operation": "ListObjects",
+        "Bucket": "custom-labels-console-us-east-1-f0fbd979ec",
+        "Key": "",
+        "UploadId": "",
+        "CopySource": "",
+        "Id": "",
+        "Delete": "",
+        "AccelerateConfiguration": "",
+        "AnalyticsConfiguration": "",
+        "CORSConfiguration": "",
+        "ServerSideEncryptionConfiguration": "",
+        "IntelligentTieringConfiguration": "",
+        "InventoryConfiguration": "",
+        "BucketLoggingStatus": "",
+        "MetricsConfiguration": "",
+        "NotificationConfiguration": "",
+        "OwnershipControls": "",
+        "Policy": "",
+        "ReplicationConfiguration": "",
+        "RequestPaymentConfiguration": "",
+        "Tagging": "",
+        "VersioningConfiguration": "",
+        "WebsiteConfiguration": "",
+        "PublicAccessBlockConfiguration": "",
+        "Expression": "",
+        "ExpressionType": "",
+        "InputSerialization": "",
+        "OutputSerialization": "",
+        "PartNumber": "",
+        "name": "listar objetos",
+        "x": 390,
+        "y": 160,
+        "wires": [
+            [
+                "83f7acc13d13ec29"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "96ea9ca14ebbd78f",
+        "type": "inject",
+        "z": "79750fc40d53d665",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 130,
+        "y": 160,
+        "wires": [
+            [
+                "94386c6eb342f02b"
+            ]
+        ]
+    },
+    {
+        "id": "83f7acc13d13ec29",
+        "type": "debug",
+        "z": "79750fc40d53d665",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "89e98a10effbab7c",
+        "type": "debug",
+        "z": "79750fc40d53d665",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "80e33efc7929193a",
+        "type": "AWS S3",
+        "z": "79750fc40d53d665",
+        "aws": "a77d22ca69e60a3b",
+        "operation": "PutObject",
+        "Bucket": "custom-labels-console-us-east-1-f0fbd979ec",
+        "Key": "",
+        "UploadId": "",
+        "CopySource": "",
+        "Id": "",
+        "Delete": "",
+        "AccelerateConfiguration": "",
+        "AnalyticsConfiguration": "",
+        "CORSConfiguration": "",
+        "ServerSideEncryptionConfiguration": "",
+        "IntelligentTieringConfiguration": "",
+        "InventoryConfiguration": "",
+        "BucketLoggingStatus": "",
+        "MetricsConfiguration": "",
+        "NotificationConfiguration": "",
+        "OwnershipControls": "",
+        "Policy": "",
+        "ReplicationConfiguration": "",
+        "RequestPaymentConfiguration": "",
+        "Tagging": "",
+        "VersioningConfiguration": "",
+        "WebsiteConfiguration": "",
+        "PublicAccessBlockConfiguration": "",
+        "Expression": "",
+        "ExpressionType": "",
+        "InputSerialization": "",
+        "OutputSerialization": "",
+        "PartNumber": "",
+        "name": "PUT objeto",
+        "x": 330,
+        "y": 260,
+        "wires": [
+            [
+                "89e98a10effbab7c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "2f43774c138217b5",
+        "type": "function",
+        "z": "79750fc40d53d665",
+        "name": "function 1",
+        "func": "const fs = global.get('fs');\n\nconst file = msg.payload; // Path to and name of object. For example '../myFiles/index.js'.\nconst fileStream = fs.readFileSync(file);\n\n/* const uploadParams = {\n    Bucket: \"custom-labels-console-us-east-1-f0fbd979ec\",\n    // Add the required 'Key' parameter using the 'path' module.\n    Key: \"assets/galgadot/foto.jpg\",\n    // Add the required 'Body' parameter\n    Body: fileStream,\n};\n*/\n//msg.Bucket= \"custom-labels-console-us-east-1-f0fbd979ec\";\nmsg.Key= \"assets/galgadot/foto.jpg\";\nmsg.Body= fileStream;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 360,
+        "wires": [
+            [
+                "d7d043a861342d49",
+                "80e33efc7929193a"
+            ]
+        ]
+    },
+    {
+        "id": "d7d043a861342d49",
+        "type": "debug",
+        "z": "79750fc40d53d665",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "9961aabc9d15f826",
+        "type": "inject",
+        "z": "79750fc40d53d665",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "S:/Users/19.01324-8/Documents/foto.JPG",
+        "payloadType": "str",
+        "x": 110,
+        "y": 360,
+        "wires": [
+            [
+                "2f43774c138217b5"
+            ]
+        ]
+    },
+    {
+        "id": "a77d22ca69e60a3b",
+        "type": "amazon config",
+        "name": "AWS",
+        "region": "us-east-1",
+        "proxyRequired": false,
+        "proxy": ""
+    }
+]

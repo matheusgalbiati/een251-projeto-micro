@@ -1,0 +1,13 @@
+Access Key
+
+AKIAY4XFH46LC3Q2FCO7
+
+
+Secret Key
+
+kudwjvLksnLszRrr6EYFU6vgDgAOM5UPRoUgxSjJ
+
+
+Raspberry
+username: raspberry
+password: raspberry
